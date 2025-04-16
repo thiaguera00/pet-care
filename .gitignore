@@ -1,0 +1,20 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+*.log
+
+# SQLite (caso use)
+db.sqlite3
+
+# Ambiente virtual
+venv/
+.env
+*.env
+
+# VSCode
+.vscode/
+
+# Django migrations (não obrigatório, mas comum em dev)
+**/migrations/*.py
+!**/migrations/__init__.py
