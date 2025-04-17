@@ -6,4 +6,4 @@ class Pet(models.Model):
     species = models.CharField(max_length=50)
     breed = models.CharField(max_length=50)
     birthdate = models.DateField()
-    owner = models.ForeignKey(User, on_delete=models.CASCADE, related_name='pets')
+    user_id = models.ForeignKey(User, on_delete=models.CASCADE, related_name='pets')

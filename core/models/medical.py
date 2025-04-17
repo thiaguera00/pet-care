@@ -6,7 +6,7 @@ class MedicalRecord(models.Model):
     diagnosis = models.TextField()
     treatment = models.TextField()
     notes = models.TextField(blank=True)
-    appointment = models.OneToOneField(VetAppointment, on_delete=models.CASCADE, related_name='medical_record')
+    appointment_id = models.OneToOneField(VetAppointment, on_delete=models.CASCADE, related_name='medical_record')
 
 class Medication(models.Model):
     name = models.CharField(max_length=100)
@@ -14,4 +14,4 @@ class Medication(models.Model):
     frequency = models.CharField(max_length=50)
     start_date = models.DateField()
     end_date = models.DateField()
-    pet = models.ForeignKey(Pet, on_delete=models.CASCADE, related_name='medications')
+    pet_id = models.ForeignKey(Pet, on_delete=models.CASCADE, related_name='medications')
