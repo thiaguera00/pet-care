@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Login - PetCare</title>
+    <link rel="stylesheet" href="{% static 'css/global.css' %}">
+</head>
+<body>
+    <div class="container">
+        <div class="left">
+            <img src="{% static 'img/logo.png' %}" alt="logo">
+            <img src="{% static 'img/cachorro.png' %}" alt="cachorro">
+        </div>
+        <div class="right">
+            <h2>Bem-Vindo!</h2>
+            <form method="post">
+                {% csrf_token %}
+                <div class="input-group">
+                    <i class="fas fa-user"></i>
+                    <input type="text" name="username" placeholder="Usuário">
+                </div>
+                
+                <div class="input-group">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" name="password" placeholder="Senha">
+                </div>
+                <div class="button-format">
+                    <button type="submit">Entrar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
