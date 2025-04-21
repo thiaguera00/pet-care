@@ -1,0 +1,42 @@
+{% extends '../base.html' %}
+{% load static %}
+
+{% block title %}Página Inicial{% endblock %}
+
+{% block content %}
+<nav class="navbar-home">
+    <div class="navbar-left">
+        <img src="{% static 'img/logo.png' %}" alt="logo" class="logo-img">
+    </div>
+</nav>
+
+<div class="home-container">
+    <h2 class="home-title">Acesso rápido</h2>
+    <div class="button-grid">
+        <a href="#" class="home-button">
+            <img src="{% static 'img/icon-pet.png' %}" alt="Pet">
+            <span>Pet</span>
+        </a>
+        <a href="#" class="home-button consulta-button">
+            <img src="{% static 'img/icon-consulta.png' %}" alt="Consulta" id="consulta">
+            <span>Consulta</span>
+        </a>
+        <a href="#" class="home-button">
+            <img src="{% static 'img/icon-medicamento.png' %}" alt="Medicamento">
+            <span>Medicamento</span>
+        </a>
+        <a href="#" class="home-button">
+            <img src="{% static 'img/icon-prontuario.png' %}" alt="Prontuário">
+            <span>Prontuário</span>
+        </a>
+        <a href="#" class="home-button">
+            <img src="{% static 'img/icon-clinica.png' %}" alt="Clínica">
+            <span>Clínica</span>
+        </a>
+        <a href="#" class="home-button">
+            <img src="{% static 'img/icon-usuario.png' %}" alt="Usuário">
+            <span>Usuário</span>
+        </a>
+    </div>
+</div>
+{% endblock %}

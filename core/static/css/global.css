@@ -7,6 +7,7 @@
 body, html {
     height: 100%;
     font-family: 'Segoe UI', sans-serif;
+    overflow: hidden;
 }
 
 .container {
@@ -99,4 +100,104 @@ form {
     background-color: #e9e9e9;
     border-radius: 5px;
     font-size: 14px;
+}
+
+.navbar-home {
+    background-color: #eef6f6;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5px; 
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.navbar-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-img {
+    width: 145px;
+    object-fit: contain;
+}
+
+.logo-text {
+    font-family: 'Brush Script MT', cursive;
+    font-size: 26px;
+    color: #1c2a4e;
+    font-weight: bold;
+}
+
+.navbar-links {
+    display: flex;
+    gap: 40px; 
+}
+
+.navbar-links a {
+    text-decoration: none;
+    color: #000;
+    font-size: 16px;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.navbar-links a:hover {
+    color: #2b6f6f;
+}
+
+.home-container {
+    background-color: #eef6f6;
+    min-height: 100vh;
+    text-align: center;
+}
+
+.home-title {
+    font-size: 33px;
+    font-weight: bold;
+    margin-bottom: 40px;
+    color: #424E52;
+}
+
+.button-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 70px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.home-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #E3E3E3;
+    width: 250px;
+    height: 220px;
+    padding: 20px 10px;
+    border-radius: 10px;
+    text-decoration: none;
+    color: #000;
+    font-size: 16px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s;
+}
+
+.home-button:hover {
+    background-color: #a0ccc2;
+}
+
+.home-button img {
+    width: 100px;
+    height: 100px;
+}
+
+#consulta {
+    width: 100px;
+}
+
+span {
+    font-size: 25px;
+    margin-top: 20px;
 }
