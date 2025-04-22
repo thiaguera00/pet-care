@@ -33,6 +33,7 @@ def criar_pet(request):
         return redirect('listar_pets')
     
     usuarios = User.objects.all()
+    print(usuarios) 
     return render(request, 'core/pets/cadastro.html', {'usuarios': usuarios})
 
 def editar_pet(request, pet_id):

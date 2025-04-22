@@ -1,0 +1,48 @@
+{% extends '../base.html' %}
+
+{% block title %}Listagem de Pet{% endblock %}
+
+{% block content %}
+<style>
+    body {
+        background-color: #f0f8f8;
+    }
+</style>
+<div>
+    <h2 class="h2-title-list">Pet</h2>
+</div>
+<div class="search-bar">
+    <input type="text" placeholder="🔍 Buscar pelo nome do Pet ou Tutor">
+</div>
+
+<div class="table-container">
+    <div class="header-row">Listar pet</div>
+    <table>
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Espécie</th>
+                <th>Raça</th>
+                <th>Aniversário</th>
+                <th>Tutor</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for pet in pets %}
+            <tr>
+                <td>{{ pet.name }}</td>
+                <td>{{ pet.species }}</td>
+                <td>{{ pet.breed }}</td>
+                <td>{{ pet.birthdate|date:"d/m/Y" }}</td>
+                <td>{{ pet.user_id.username }}</td>
+                <td class="actions">
+                    <a href="{% url 'editar_pet' pet.id %}"><i class="bi bi-pencil" style="color: #000;"></i></a>
+                    <a href="{% url 'deletar_pet' pet.id %}"><i class="bi bi-trash" style="color: #000;"></i></a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}
