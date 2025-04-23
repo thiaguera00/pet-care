@@ -46,12 +46,10 @@ def editar_pet(request, pet_id):
             return redirect('listar_pets')
     else:
         form = PetForm(instance=pet)
-    return render(request, 'core/pets/form.html', {'form': form, 'titulo': 'Editar Pet'})
+    return render(request, 'core/pets/editar.html', {'form': form, 'titulo': 'Editar Pet'})
 
 def deletar_pet(request, pet_id):
     pet = get_object_or_404(Pet, id=pet_id)
-    if request.method == 'POST':
-        pet.delete()
-        messages.success(request, 'Pet removido com sucesso!')
-        return redirect('listar_pets')
-    return render(request, 'core/pets/confirmar_delete.html', {'pet': pet})
+    pet.delete()
+    messages.success(request, 'Pet removido com sucesso!')
+    return redirect('listar_pets')

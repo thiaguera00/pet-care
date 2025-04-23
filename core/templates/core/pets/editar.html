@@ -1,0 +1,50 @@
+{% extends '../base.html' %}
+{% load widget_tweaks %}
+{% block title %}Cadastro de Pet{% endblock %}
+
+{% block content %}
+<style>
+    body {
+        background-color: #f0f8f8;
+    }
+    
+</style>
+
+<form method="post" class="form-pet">
+    {% csrf_token %}
+
+    <h2 class="title-pet">Editar Pet</h2>
+
+    <div class="mb-3">
+        <label for="{{ form.name.id_for_label }}">Nome</label>
+        {{ form.name|add_class:"form-control" }}
+    </div>
+
+    <div class="form-row">
+        <div class="mb-3">
+            <label for="{{ form.species.id_for_label }}">Espécie</label>
+            {{ form.species|add_class:"form-control" }}
+        </div>
+        <div class="mb-3">
+            <label for="{{ form.breed.id_for_label }}">Raça</label>
+            {{ form.breed|add_class:"form-control" }}
+        </div>
+    </div>
+
+    <div class="mb-3">
+        <label for="{{ form.birthdate.id_for_label }}">Aniversário</label>
+        {{ form.birthdate|add_class:"form-control" }}
+    </div>
+
+    <div class="mb-3">
+        <label for="{{ form.user_id.id_for_label }}">Tutor</label>
+        {{ form.user_id|add_class:"form-control" }}
+    </div>
+
+    <div class="d-flex justify-content-between">
+        <a href="{% url 'listar_pets' %}" class="btn" id="btn-cancelar">Cancelar</a>
+        <button type="submit" class="btn" id="btn-cadastrar">Salvar</button>
+    </div>
+</form>
+
+{% endblock %}
