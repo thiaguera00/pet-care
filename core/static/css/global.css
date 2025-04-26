@@ -204,7 +204,8 @@ span {
 }
 
 .form-pet,
-.form-clinica {
+.form-clinica,
+.form-consulta {
     max-width: 800px;
     margin: 0 auto;
     margin-top: 30px;
@@ -215,7 +216,8 @@ span {
 }
 
 .title-pet,
-.title-clinica {
+.title-clinica,
+.title-consulta {
     font-weight: bold;
     text-align: center;
     margin-bottom: 30px;

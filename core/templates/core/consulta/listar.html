@@ -1,0 +1,43 @@
+{% extends '../base.html' %}
+
+{% block title %}Listagem de Consulta{% endblock %}
+
+{% block content %}
+<style>
+    body {
+        background-color: #f0f8f8;
+    }
+</style>
+<div>
+    <h2 class="h2-title-list">Consulta</h2>
+</div>
+<div class="search-bar">
+    <input type="text" placeholder="🔍 Buscar pelo nome do Pet ou da Consulta">
+</div>
+
+<div class="table-container">
+    <div class="header-row">Listar consulta</div>
+    <table>
+        <thead>
+            <tr>
+                <th>Data</th>
+                <th>Tutor</th>
+                <th>Pet</th>
+                <th>Clínica</th>
+                <th>Razão</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for consulta in consultas %}
+            <tr>
+                <td>{{ consulta.date }}</td>
+                <td>{{ consulta.reason }}</td>
+                <td>{{ consulta.pet }}</td>
+                <td>{{ consulta.user_id }}</td>
+                <td>{{ consulta.clinic_id }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}
