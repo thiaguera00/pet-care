@@ -30,4 +30,5 @@ urlpatterns = [
     path('medicalrecords/novo/', views.criar_medicalrecord, name='criar_medicalrecord'),
     path('medications/', views.listar_medications, name='listar_medications'),
     path('medications/novo/', views.criar_medication, name='criar_medication'),
+    path('user/perfil', views.informacoes_usuario, name='informacoes_usuario'),
 ]
