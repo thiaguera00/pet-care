@@ -8,12 +8,12 @@ from django.contrib import messages
 class MedicalRecordForm(forms.ModelForm):
     class Meta:
         model = MedicalRecord
-        fields = ['diagnosis', 'treatment', 'notes', 'appointment_id']
+        fields = ['diagnosis', 'treatment', 'notes', 'appointment']
 
 class MedicationForm(forms.ModelForm):
     class Meta:
         model = Medication
-        fields = ['name', 'dosage', 'frequency', 'start_date', 'end_date', 'pet_id']
+        fields = ['name', 'dosage', 'frequency', 'start_date', 'end_date', 'pet']
 
 def listar_medicalrecords(request):
     medicalrecords = MedicalRecord.objects.select_related('appointment_id__pet', 'appointment_id__user_id').all()
