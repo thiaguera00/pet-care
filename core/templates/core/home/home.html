@@ -9,7 +9,7 @@
 <div class="home-container">
     <h2 class="home-title">Acesso rápido</h2>
     <div class="button-grid">
-        <a href="#" class="home-button">
+        <a href="{% url 'listar_pets' %}" class="home-button">
             <img src="{% static 'img/icon-pet.png' %}" alt="Pet">
             <span>Pet</span>
         </a>
@@ -29,7 +29,7 @@
             <img src="{% static 'img/icon-clinica.png' %}" alt="Clínica">
             <span>Clínica</span>
         </a>
-        <a href="#" class="home-button">
+        <a href="{% url 'informacoes_usuario' %}" class="home-button">
             <img src="{% static 'img/icon-usuario.png' %}" alt="Usuário">
             <span>Usuário</span>
         </a>
