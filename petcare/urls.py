@@ -28,4 +28,9 @@ urlpatterns = [
     path('pets/novo/', views.criar_pet, name='criar_pet'),
     path('pets/editar/<int:pet_id>/', views.editar_pet, name='editar_pet'),
     path('pets/deletar/<int:pet_id>/', views.deletar_pet, name='deletar_pet'),
+    path('medicalrecords/', views.listar_medicalrecords, name='listar_medicalrecords'),
+    path('medicalrecords/novo/', views.criar_medicalrecord, name='criar_medicalrecord'),
+    path('medications/', views.listar_medications, name='listar_medications'),
+    path('medications/novo/', views.criar_medication, name='criar_medication'),
+    path('user/perfil', views.informacoes_usuario, name='informacoes_usuario'),
 ]

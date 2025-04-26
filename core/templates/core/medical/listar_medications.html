@@ -1,0 +1,45 @@
+{% extends '../base.html' %}
+
+{% block title %}Listagem de Medicamento{% endblock %}
+
+{% block content %}
+<style>
+    body {
+        background-color: #f0f8f8;
+    }
+</style>
+<div>
+    <h2 class="h2-title-list">Medicamento</h2>
+</div>
+<div class="search-bar">
+    <input type="text" placeholder="🔍 Buscar pela medicamento">
+</div>
+
+<div class="table-container">
+    <div class="header-row">Listar medicamento</div>
+    <table>
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Dosagem</th>
+                <th>Frequência</th>
+                <th>Início</th>
+                <th>Fim</th>
+                <th>Pet</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for med in medications %}
+            <tr>
+                <td>{{ med.name }}</td>
+                <td>{{ med.dosage }}</td>
+                <td>{{ med.frequency }}</td>
+                <td>{{ med.start_date }}</td>
+                <td>{{ med.end_date }}</td>
+                <td>{{ med.pet_id.name}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}
