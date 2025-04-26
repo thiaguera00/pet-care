@@ -1,6 +1,8 @@
 from django import forms
 from django.shortcuts import render, redirect, get_object_or_404
 from core.models.medical import MedicalRecord, Medication
+from core.models.appointment import VetAppointment
+from core.models.pet import Pet
 from django.contrib import messages
 
 class MedicalRecordForm(forms.ModelForm):
@@ -14,7 +16,7 @@ class MedicationForm(forms.ModelForm):
         fields = ['name', 'dosage', 'frequency', 'start_date', 'end_date', 'pet_id']
 
 def listar_medicalrecords(request):
-    medicalrecords = MedicalRecord.objects.all()
+    medicalrecords = MedicalRecord.objects.select_related('appointment_id__pet', 'appointment_id__user_id').all()
     return render(request, 'core/medical/listar_medicalrecords.html', {'medicalrecords': medicalrecords})
 
 def criar_medicalrecord(request):
@@ -25,11 +27,11 @@ def criar_medicalrecord(request):
             messages.success(request, 'Prontuário criado com sucesso!')
             return redirect('listar_medicalrecords')
     else:
-        form = MedicalRecordForm()
-    return render(request, 'core/medical/criar_medicalrecord.html', {'form': form})
+        appointment = VetAppointment.objects.all()
+    return render(request, 'core/medical/criar_medicalrecord.html', {'appointment': appointment})
 
 def listar_medications(request):
-    medications = Medication.objects.all()
+    medications = Medication.objects.select_related('pet_id').all()
     return render(request, 'core/medical/listar_medications.html', {'medications': medications})
 
 def criar_medication(request):
@@ -40,5 +42,5 @@ def criar_medication(request):
             messages.success(request, 'Medicação criada com sucesso!')
             return redirect('listar_medications')
     else:
-        form = MedicationForm()
-    return render(request, 'core/medical/criar_medication.html', {'form': form})
+        pet = Pet.objects.all()
+    return render(request, 'core/medical/criar_medication.html', {'pet': pet})
