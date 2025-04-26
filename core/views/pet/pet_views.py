@@ -7,7 +7,7 @@ from django import forms
 class PetForm(forms.ModelForm):
     class Meta:
         model = Pet
-        fields = ['name', 'species', 'breed', 'birthdate', 'user_id']
+        fields = ['name', 'species', 'breed', 'birthdate', 'owner']
 
 def listar_pets(request):
     pets = Pet.objects.all()
