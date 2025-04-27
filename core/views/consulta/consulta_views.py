@@ -9,7 +9,7 @@ from django import forms
 class VetAppointmentForm(forms.ModelForm):
     class Meta:
         model = VetAppointment
-        fields = ['date', 'reason', 'pet', 'user_id', 'clinic_id']
+        fields = ['date', 'reason', 'pet', 'tutor', 'clinic']
 
 def listar_consultas(request):
     consultas = VetAppointment.objects.all()

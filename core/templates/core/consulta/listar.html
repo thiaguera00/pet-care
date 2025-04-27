@@ -31,10 +31,10 @@
             {% for consulta in consultas %}
             <tr>
                 <td>{{ consulta.date }}</td>
+                <td>{{ consulta.tutor }}</td>
+                <td>{{ consulta.pet.name }}</td>
+                <td>{{ consulta.clinic.name }}</td>
                 <td>{{ consulta.reason }}</td>
-                <td>{{ consulta.pet }}</td>
-                <td>{{ consulta.user_id }}</td>
-                <td>{{ consulta.clinic_id }}</td>
             </tr>
             {% endfor %}
         </tbody>
