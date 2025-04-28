@@ -7,6 +7,19 @@
     body {
         background-color: #f0f8f8;
     }
+
+    .btn-criar {
+    background-color: #FF914C;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+.btn-criar:hover {
+    background-color: #e67e33;
+}
 </style>
 <div>
     <h2 class="h2-title-list">Prontuário</h2>
@@ -16,6 +29,9 @@
 </div>
 
 <div class="table-container">
+    <div style="display: flex; justify-content: end; margin-bottom: 10px;">
+        <a href="{% url 'criar_medicalrecord' %}" class="btn-criar">Criar</a>
+    </div>
     <div class="header-row">Listar prontuário</div>
     <table>
         <thead>
@@ -32,10 +48,30 @@
                 <td>{{ records.diagnosis }}</td>
                 <td>{{ records.treatment }}</td>
                 <td>{{ records.notes }}</td>
-                <td>{{ records.appointment_id.pet.name}}  - {{ records.appointment_id.date}}</td>
+                <td>{{ records.appointment.pet.name}}  - {{ records.appointment.date}}</td>
             </tr>
             {% endfor %}
         </tbody>
     </table>
 </div>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const inputBusca = document.querySelector('.search-bar input');
+        const linhasTabela = document.querySelectorAll('tbody tr');
+
+        inputBusca.addEventListener('input', function() {
+            const valorBusca = inputBusca.value.toLowerCase();
+
+            linhasTabela.forEach(linha => {
+                const textoLinha = linha.textContent.toLowerCase();
+
+                if (textoLinha.includes(valorBusca)) {
+                    linha.style.display = '';
+                } else {
+                    linha.style.display = 'none';
+                }
+            });
+        });
+    });
+</script>
 {% endblock %}

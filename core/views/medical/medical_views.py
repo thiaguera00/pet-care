@@ -16,7 +16,7 @@ class MedicationForm(forms.ModelForm):
         fields = ['name', 'dosage', 'frequency', 'start_date', 'end_date', 'pet']
 
 def listar_medicalrecords(request):
-    medicalrecords = MedicalRecord.objects.select_related('appointment_id__pet', 'appointment_id__user_id').all()
+    medicalrecords = MedicalRecord.objects.all()
     return render(request, 'core/medical/listar_medicalrecords.html', {'medicalrecords': medicalrecords})
 
 def criar_medicalrecord(request):
@@ -31,7 +31,7 @@ def criar_medicalrecord(request):
     return render(request, 'core/medical/criar_medicalrecord.html', {'appointment': appointment})
 
 def listar_medications(request):
-    medications = Medication.objects.select_related('pet_id').all()
+    medications = Medication.objects.all()
     return render(request, 'core/medical/listar_medications.html', {'medications': medications})
 
 def criar_medication(request):
