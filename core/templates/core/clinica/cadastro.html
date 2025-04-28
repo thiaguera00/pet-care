@@ -1,0 +1,53 @@
+{% extends '../base.html' %}
+
+{% block title %}Cadastro de Clínica{% endblock %}
+
+{% block content %}
+<style>
+    body {
+        background-color: #f0f8f8;
+    }
+    
+</style>
+
+<form method="post" class="form-clinica">
+    {% csrf_token %}
+
+    <h2 class="title-clinica">Cadastro clínica</h2>
+
+    <div class="mb-3">
+        <label for="name">Nome</label>
+        <input type="text" class="form-control" name="name" id="name">
+    </div>
+
+    <div class="mb-3">
+        <label for="address">Endereço</label>
+        <input type="text" class="form-control" name="address" id="address">
+    </div>
+    <div class="mb-3">
+        <label for="phone">Telefone</label>
+        <input type="tel" class="form-control" name="phone" id="phone" placeholder="(XX) XXXXX-XXXX" maxlength="15">
+    </div>
+
+    <div class="d-flex justify-content-between">
+        <a href="{% url 'listar_clinicas' %}" class="btn " id="btn-cancelar">Cancelar</a>
+        <button type="submit" class="btn " id="btn-cadastrar">Cadastrar</button>
+    </div>
+</form>
+
+<script>
+    const phoneInput = document.getElementById('phone');
+
+    phoneInput.addEventListener('input', function (e) {
+        let value = e.target.value.replace(/\D/g, '');
+        
+        if (value.length > 2 && value.length <= 7) {
+            value = `(${value.slice(0,2)}) ${value.slice(2)}`;
+        } else if (value.length > 7) {
+            value = `(${value.slice(0,2)}) ${value.slice(2,7)}-${value.slice(7,11)}`;
+        }
+        
+        e.target.value = value;
+    });
+</script>
+{% endblock %}

@@ -1,0 +1,39 @@
+{% extends '../base.html' %}
+
+{% block title %}Listagem de Clínica{% endblock %}
+
+{% block content %}
+<style>
+    body {
+        background-color: #f0f8f8;
+    }
+</style>
+<div>
+    <h2 class="h2-title-list">Clínica</h2>
+</div>
+<div class="search-bar">
+    <input type="text" placeholder="🔍 Buscar pelo nome da Clínica">
+</div>
+
+<div class="table-container">
+    <div class="header-row">Listar clínica</div>
+    <table>
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Endereço</th>
+                <th>Telefone</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for clinica in clinicas %}
+            <tr>
+                <td>{{ clinica.name }}</td>
+                <td>{{ clinica.address }}</td>
+                <td>{{ clinica.phone }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

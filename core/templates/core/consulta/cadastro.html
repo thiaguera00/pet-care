@@ -1,0 +1,63 @@
+{% extends '../base.html' %}
+
+{% block title %}Cadastro de Consulta{% endblock %}
+
+{% block content %}
+<style>
+    body {
+        background-color: #f0f8f8;
+    }
+    
+</style>
+
+<form method="post" class="form-consulta">
+    {% csrf_token %}
+
+    <h2 class="title-consulta">Cadastro consulta</h2>
+
+    <div class="mb-3">
+        <label for="name">Nome do Pet</label>
+        <select class="form-control" name="pet" id="pet" required>
+            <option value="">Selecione o Pet</option>
+            {% for pet in pets %}
+                <option value="{{ pet.id }}">{{ pet.name }}</option>
+            {% endfor %}
+        </select>
+    </div>
+
+    <div class="mb-3">
+        <label for="date">Data</label>
+        <input type="date" class="form-control" name="date" id="date" required>
+    </div>
+
+    <div class="mb-3">
+        <label for="user_id">Tutor</label>
+        <select class="form-control" name="tutor" id="user_id">
+            <option value="">Selecione o Tutor</option>
+            {% for user in users %}
+                <option value="{{ user.id }}">{{ user.username }}</option>
+            {% endfor %}
+        </select>
+    </div>
+
+    <div class="mb-3">
+        <label for="user_id">Clínica</label>
+        <select class="form-control" name="clinic" id="clinic_id" required>
+            <option value="">Selecione a Clínica</option>
+            {% for clinic in clinics %}
+                <option value="{{ clinic.id }}">{{ clinic.name }}</option>
+            {% endfor %}
+        </select>
+    </div>
+
+    <div class="mb-3">
+        <label for="reason">Razão</label>
+        <textarea class="form-control" name="reason" id="reason" rows="2" required></textarea>
+    </div>
+
+    <div class="d-flex justify-content-between">
+        <a href="{% url 'listar_consultas' %}" class="btn " id="btn-cancelar">Cancelar</a>
+        <button type="submit" class="btn " id="btn-cadastrar">Cadastrar</button>
+    </div>
+</form>
+{% endblock %}

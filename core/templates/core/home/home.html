@@ -13,7 +13,7 @@
             <img src="{% static 'img/icon-pet.png' %}" alt="Pet">
             <span>Pet</span>
         </a>
-        <a href="#" class="home-button consulta-button">
+        <a href="{% url 'listar_consultas' %}" class="home-button consulta-button">
             <img src="{% static 'img/icon-consulta.png' %}" alt="Consulta" id="consulta">
             <span>Consulta</span>
         </a>
@@ -25,7 +25,7 @@
             <img src="{% static 'img/icon-prontuario.png' %}" alt="Prontuário">
             <span>Prontuário</span>
         </a>
-        <a href="#" class="home-button">
+        <a href="{% url 'listar_clinicas' %}" class="home-button">
             <img src="{% static 'img/icon-clinica.png' %}" alt="Clínica">
             <span>Clínica</span>
         </a>
