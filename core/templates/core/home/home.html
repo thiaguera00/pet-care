@@ -18,11 +18,11 @@
             <img src="{% static 'img/icon-consulta.png' %}" alt="Consulta" id="consulta">
             <span>Consulta</span>
         </a>
-        <a href="#" class="home-button">
+        <a href="{% url 'listar_medications'%}" class="home-button">
             <img src="{% static 'img/icon-medicamento.png' %}" alt="Medicamento">
             <span>Medicamento</span>
         </a>
-        <a href="#" class="home-button">
+        <a href="{% url 'listar_medicalrecords'%}" class="home-button">
             <img src="{% static 'img/icon-prontuario.png' %}" alt="Prontuário">
             <span>Prontuário</span>
         </a>

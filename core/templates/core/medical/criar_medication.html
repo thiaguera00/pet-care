@@ -42,8 +42,8 @@
     </div>
 
     <div class="mb-3">
-        <label for="user_id">Pet</label>
-        <select class="form-control" name="pet_id" id="pet_id">
+        <label for="pets">Pet</label>
+        <select class="form-control" name="pet" id="pet">
             <option value="">Selecione o pet</option>
             {% for pets in pet %}
                 <option value="{{ pets.id }}">{{ pets.name }}</option>

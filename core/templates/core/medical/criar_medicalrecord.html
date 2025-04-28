@@ -6,14 +6,14 @@
 <style>
     body {
         background-color: #f0f8f8;
-    }
+    } 
     
 </style>
 
 <form method="post" class="form-pet">
     {% csrf_token %}
 
-    <h2 class="title-pet">Prontuário Medico</h2>
+    <h2 class="title-pet">Prontuário Médico</h2>
 
     <div class="mb-3">
         <label for="name">Diagnóstico</label>
@@ -32,7 +32,7 @@
 
     <div class="mb-3">
         <label for="user_id">Consulta</label>
-        <select class="form-control" name="appointment_id" id="appointment_id">
+        <select class="form-control" name="appointment" id="appointment">
             <option value="">Selecione a consulta</option>
             {% for consulta in appointment %}
                 <option value="{{ consulta.id }}">{{ consulta.pet.name }} - {{ consulta.date }}</option>
