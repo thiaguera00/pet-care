@@ -104,12 +104,18 @@ form {
 }
 
 .navbar-home {
-    background-color: #eef6f6;
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 5px; 
+    padding: 10px 30px;
     font-family: 'Segoe UI', sans-serif;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
 .navbar-left {
@@ -123,34 +129,40 @@ form {
     object-fit: contain;
 }
 
-.logo-text {
-    font-family: 'Brush Script MT', cursive;
-    font-size: 26px;
-    color: #1c2a4e;
-    font-weight: bold;
-}
-
 .navbar-links {
     display: flex;
-    gap: 40px; 
+    gap: 32px;
+    align-items: center;
 }
 
-.navbar-links a {
+.navbar-links .nav-item {
     text-decoration: none;
-    color: #000;
-    font-size: 16px;
+    color: #333;
+    font-size: 17px;
     font-weight: 500;
-    transition: color 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 12px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
 }
 
-.navbar-links a:hover {
-    color: #2b6f6f;
+.navbar-links .nav-item:hover {
+    background-color: rgba(255, 145, 76, 0.2);
+    color: #FF914C;
+    transform: scale(1.05);
+}
+
+.navbar-links .nav-item i {
+    font-size: 20px;
 }
 
 .home-container {
     background-color: #eef6f6;
     min-height: 100vh;
     text-align: center;
+    padding-top: 50px;
 }
 
 .home-title {
@@ -166,6 +178,7 @@ form {
     gap: 70px;
     max-width: 900px;
     margin: 0 auto;
+    padding-top: 15px; 
 }
 
 .home-button {
@@ -186,7 +199,7 @@ form {
 }
 
 .home-button:hover {
-    background-color: #a0ccc2;
+    background-color: #eedfc8;
 }
 
 .home-button img {
@@ -221,6 +234,7 @@ span {
     font-weight: bold;
     text-align: center;
     margin-bottom: 30px;
+    padding-top: 50px;
 }
 
 .form-control {
@@ -317,4 +331,5 @@ tr:nth-child(even) {
     text-align: center;
     font-weight: bold;
     margin-bottom: 24px;
+    padding-top: 50px;
 }
