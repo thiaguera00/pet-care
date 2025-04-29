@@ -25,7 +25,20 @@ SECRET_KEY = 'django-insecure-d4pjl+nlu@x1=268=$ygl+)9go1$vm94mmix1h6o!qu3-)-rv3
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+# Para rodar em ambiente de PROD
+ALLOWED_HOSTS = ['*']
+
+CSRF_TRUSTED_ORIGINS = [
+    "https://localhost:8000",
+    "http://localhost:8000",
+    "http://127.0.0.1:8000",
+    "https://127.0.0.1:8000",
+    "https://*.app.github.dev",
+    "https://*.githubpreview.dev",
+]
+
+#Para rodar em ambiente de DEV comente o ambiente de PROD
+#ALLOWED_HOSTS = []
 
 # Application definition
 
