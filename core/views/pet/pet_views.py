@@ -19,15 +19,15 @@ def criar_pet(request):
         species = request.POST.get('species')
         breed = request.POST.get('breed')
         birthdate = request.POST.get('birthdate')
-        user_id = request.POST.get('user_id')
+        owner_id = request.POST.get('owner')
 
-        owner = User.objects.get(id=user_id)
+        owner = User.objects.get(id=owner_id)
         Pet.objects.create(
             name=name,
             species=species,
             breed=breed,
             birthdate=birthdate,
-            user_id=owner
+            owner=owner
         )
         messages.success(request, 'Pet criado com sucesso!')
         return redirect('listar_pets')

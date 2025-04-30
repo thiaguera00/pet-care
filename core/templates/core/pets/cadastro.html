@@ -38,7 +38,7 @@
 
     <div class="mb-3">
         <label for="user_id">Tutor</label>
-        <select class="form-control" name="user_id" id="user_id">
+        <select class="form-control" name="owner" id="user_id">
             <option value="">Selecione o tutor</option>
             {% for user in usuarios %}
                 <option value="{{ user.id }}">{{ user.id }} - {{ user.username }}</option>
