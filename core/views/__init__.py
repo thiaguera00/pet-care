@@ -5,3 +5,5 @@ from .login.login_view import login
 from .home.home_view import home
 from .medical.medical_views import criar_medicalrecord, criar_medication, listar_medicalrecords, listar_medications
 from .user.user_view import informacoes_usuario
+from .admin.admin_view import informacoes_admin
+from .admin.admin_view import dashboard_admin
