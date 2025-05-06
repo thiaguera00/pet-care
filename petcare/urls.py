@@ -48,6 +48,6 @@ urlpatterns = [
     path('medications/novo/', views.criar_medication, name='criar_medication'),
     path('user/perfil', views.informacoes_usuario, name='informacoes_usuario'),
     path('user/admin/login', views.informacoes_admin, name='login_admin'),
-    path('user/admin/dashboard', views.dashboard_pets, name='informacoes_admin'),
+    path('user/admin/dashboard', views.dashboard_pets, name='dashboard_admin'),
     path('', include(router.urls)),
 ]
