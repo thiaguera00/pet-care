@@ -1,11 +1,34 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Dashboard</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 </head>
 <body>
-    to aq
+
+    <h2>Pets cadastrados</h2>
+    <ul>
+        {% for pet in pets %}
+            <li>{{ pet.name }} - {{ pet.species }} ({{ pet.age }} anos)</li>
+        {% empty %}
+            <li>Nenhum pet encontrado.</li>
+        {% endfor %}
+    </ul>
+
+    <h2>Clínicas cadastradas</h2>
+    <ul>
+        {% for clinic in clinics %}
+            <li>{{ clinic.name }} - {{ clinic.address }}</li>
+        {% empty %}
+            <li>Nenhuma clínica encontrada.</li>
+        {% endfor %}
+    </ul>
+
+    <h2>Gráfico interativo</h2>
+    <div>
+        {{ grafico_html|safe }}
+    </div>
+
 </body>
 </html>
